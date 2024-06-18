@@ -1,0 +1,36 @@
+version: '3.3'
+
+services:
+  web:
+    build: ./isdb_nw2
+    command: python3 flask_app.py
+    ports:
+      - "5002:5002"
+    restart: always
+    networks:
+      - system_network
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13-alpine
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=ne-minus
+      - POSTGRES_PASSWORD=220100es
+      - POSTGRES_DB=polit_news
+    container_name: postgresql
+    hostname: postgresql
+    networks:
+      - system_network
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
+
+networks:
+  system_network:
+    driver: bridge
