@@ -1,7 +1,7 @@
 # SearchProject
 
 ## Строение кода  
-В папке **main_files** содержатся:   
+В папке **isdb_nw** содержатся:   
 1. [**\_\_main\_\_.py** ](https://github.com/hse-courses-tokubetsu/hw2-Ne-minus/blob/main/__main__.py)   -- основной файл для запуска  
 
    **Команда для запуска:**
